@@ -1,9 +1,9 @@
-# PANTONE&reg; Colors App
+# PANTONE Colors App
 
-A web app that lists PANTONE® colors.
+A web app that lists PANTONE colors.
 
 > **Disclaimer:**
-> This project is intended for non-commercial use only and is not associated with PANTONE&reg;.
+> This project is intended for non-commercial use only and is not associated with PANTONE.
 
 ## License
 

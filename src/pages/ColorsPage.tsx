@@ -23,6 +23,7 @@ export default function PalettePage() {
         </div>
       </div>
     );
+
   if (isError)
     return (
       <div className="w-full h-screen flex justify-center items-center">
