@@ -7,7 +7,7 @@ type Props = {
   color: Color;
 };
 
-export const ColorCard = ({ color }: Props) => {
+export default function ColorCard({ color }: Props) {
   const textColor = getTextColor(color.hex);
 
   const [isHovered, setIsHovered] = useState<boolean>(false);
@@ -80,4 +80,4 @@ export const ColorCard = ({ color }: Props) => {
       </CardContent>
     </Card>
   );
-};
+}

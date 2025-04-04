@@ -13,11 +13,11 @@
   },
   "license": "MIT",
   "author": "ksergenozel <ksergenozel@gmail.com>",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/ksergenozel/pantone-colors-app.git"
   },
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

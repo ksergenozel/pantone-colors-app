@@ -1,7 +1,7 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import ColorsPage from "@/pages/ColorsPage";
 
-function App() {
+export default function App() {
   return (
     <Routes>
       <Route path="/" element={<Navigate to="/colors" />} />
@@ -10,5 +10,3 @@ function App() {
     </Routes>
   );
 }
-
-export default App;

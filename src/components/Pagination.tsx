@@ -16,7 +16,7 @@ type PaginationProps = {
   onPageChange: (page: number) => void;
 };
 
-export const Pagination = ({
+export default function Pagination({
   page,
   totalPages,
   hasNextPage,
@@ -24,7 +24,7 @@ export const Pagination = ({
   nextPage,
   prevPage,
   onPageChange,
-}: PaginationProps) => {
+}: PaginationProps) {
   return (
     <div className="flex items-center gap-2 mt-8">
       <Button
@@ -75,4 +75,4 @@ export const Pagination = ({
       </Button>
     </div>
   );
-};
+}
