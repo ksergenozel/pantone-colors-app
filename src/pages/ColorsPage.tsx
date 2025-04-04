@@ -15,8 +15,22 @@ export default function PalettePage() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  if (isLoading) return <div>Loading...</div>;
-  if (isError) return <div>Error!</div>;
+  if (isLoading)
+    return (
+      <div className="w-full h-screen flex justify-center items-center">
+        <div className="flex justify-center items-center">
+          <div className="w-8 h-8 border-4 border-red-500 border-t-blue-500 border-r-green-500 border-b-yellow-500 rounded-full animate-spin"></div>
+        </div>
+      </div>
+    );
+  if (isError)
+    return (
+      <div className="w-full h-screen flex justify-center items-center">
+        <p className="text-lg font-semibold text-red-700">
+          An error occurred while fetching colors. Please try again later.
+        </p>
+      </div>
+    );
   if (!data) return null;
 
   return (
