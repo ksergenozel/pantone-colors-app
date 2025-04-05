@@ -10,7 +10,7 @@ export default function ColorSearchInput({
   setSearch: (event: ChangeEvent<HTMLInputElement>) => void;
 }) {
   return (
-    <div className="relative w-full max-w-xs mb-6">
+    <div className="relative w-full max-w-xs mb-7">
       <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-zinc-300" />
       <Input
         type="text"

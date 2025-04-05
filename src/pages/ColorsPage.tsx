@@ -6,6 +6,7 @@ import Loading from "@/components/Loading";
 import Error from "@/components/Error";
 import ColorList from "@/components/ColorList";
 import ColorSearchInput from "@/components/ColorSearchInput";
+import Title from "@/components/Title";
 
 export default function PalettePage() {
   const [search, setSearch] = useState<string>("");
@@ -35,7 +36,9 @@ export default function PalettePage() {
   if (!data) return <Error message="No data available" />;
 
   return (
-    <main className="flex flex-col items-center gap-8 py-12 px-8 bg-zinc-50 min-h-screen w-full">
+    <main className="flex flex-col items-center gap-4.5 py-12 px-8 bg-zinc-50 min-h-screen w-full">
+      <Title color={data.data[0]?.hex} />
+
       <ColorSearchInput search={search} setSearch={handleSearchChange} />
 
       <ColorList colors={data.data} />

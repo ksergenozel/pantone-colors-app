@@ -27,7 +27,7 @@ export default function Pagination({
 }: PaginationProps) {
   if (totalPages <= 1) return null;
   return (
-    <div className="flex items-center gap-2 mt-6">
+    <div className="flex items-center gap-2 mt-7">
       <Button
         variant="ghost"
         size="icon"

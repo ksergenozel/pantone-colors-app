@@ -58,7 +58,7 @@ export default function ColorCard({ color }: Props) {
 
       <CardContent className="w-full flex-col justify-center items-start m-0 p-3.5">
         <p
-          className="text-[1.6rem] font-extrabold inline font-stretch-105% relative"
+          className="text-[1.6rem] text-zinc-950 font-extrabold inline font-stretch-105% relative"
           style={{ lineHeight: "1.75rem" }}
         >
           PANTONE
