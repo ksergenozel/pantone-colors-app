@@ -2,6 +2,8 @@
 
 A web app that lists PANTONE colors.
 
+![Preview](public/pantone-colors-app-preview.gif)
+
 > **Disclaimer:**
 > This project is intended for non-commercial use only and is not associated with PANTONE.
 
