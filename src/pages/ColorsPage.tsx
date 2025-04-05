@@ -1,18 +1,27 @@
-import { useEffect, useState } from "react";
-
+import { ChangeEvent, useEffect, useState } from "react";
+import { useDebounce } from "use-debounce";
 import { useColors } from "@/hooks/useColors";
 import Pagination from "@/components/Pagination";
 import Loading from "@/components/Loading";
 import Error from "@/components/Error";
 import ColorList from "@/components/ColorList";
+import ColorSearchInput from "@/components/ColorSearchInput";
 
 export default function PalettePage() {
+  const [search, setSearch] = useState<string>("");
+  const [debouncedSearch] = useDebounce(search, 300);
   const [page, setPage] = useState<number>(1);
 
-  const { data, isLoading, isError } = useColors(page);
+  const { data, isLoading, isError } = useColors(debouncedSearch, page);
 
   const handlePageChange = (newPage: number) => {
     setPage(newPage);
+  };
+
+  const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    setSearch(value);
+    setPage(1);
   };
 
   useEffect(() => {
@@ -27,6 +36,8 @@ export default function PalettePage() {
 
   return (
     <main className="flex flex-col items-center gap-8 py-12 px-8 bg-zinc-50 min-h-screen w-full">
+      <ColorSearchInput search={search} setSearch={handleSearchChange} />
+
       <ColorList colors={data.data} />
 
       <Pagination

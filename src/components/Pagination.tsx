@@ -25,13 +25,14 @@ export default function Pagination({
   prevPage,
   onPageChange,
 }: PaginationProps) {
+  if (totalPages <= 1) return null;
   return (
-    <div className="flex items-center gap-2 mt-8">
+    <div className="flex items-center gap-2 mt-6">
       <Button
         variant="ghost"
         size="icon"
         onClick={() => onPageChange(1)}
-        disabled={page === 1}
+        disabled={!hasPrevPage || page === 1}
         className="cursor-pointer"
       >
         <ChevronsLeft className="h-4 w-4" />
@@ -68,7 +69,7 @@ export default function Pagination({
         variant="ghost"
         size="icon"
         onClick={() => onPageChange(totalPages)}
-        disabled={page === totalPages}
+        disabled={!hasNextPage || page === totalPages}
         className="cursor-pointer"
       >
         <ChevronsRight className="h-4 w-4" />
