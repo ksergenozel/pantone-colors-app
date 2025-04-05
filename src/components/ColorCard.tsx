@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { getTextColor } from "@/lib/utils";
+import { copyDataToClipboard, getTextColor } from "@/lib/utils";
 import type { Color } from "@/types/Color";
 import { useState } from "react";
 
@@ -23,10 +23,11 @@ export default function ColorCard({ color }: Props) {
   return (
     <Card
       className={
-        "w-[208px] flex-col m-0 p-0 gap-0 rounded-none shadow-lg border-none hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in"
+        "w-[208px] flex-col m-0 p-0 gap-0 rounded-none shadow-lg border-none hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in cursor-grab"
       }
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onClick={() => copyDataToClipboard(JSON.stringify(color), color.hex)}
     >
       <div
         className="w-full h-[184px] p-3.5 flex flex-col justify-end items-start relative"

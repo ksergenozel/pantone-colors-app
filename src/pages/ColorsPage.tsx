@@ -7,6 +7,7 @@ import Error from "@/components/Error";
 import ColorList from "@/components/ColorList";
 import ColorSearchInput from "@/components/ColorSearchInput";
 import Title from "@/components/Title";
+import { Toaster } from "@/components/ui/sonner";
 
 export default function PalettePage() {
   const [search, setSearch] = useState<string>("");
@@ -52,6 +53,8 @@ export default function PalettePage() {
         prevPage={data.prevPage}
         onPageChange={handlePageChange}
       />
+
+      <Toaster theme="light" position="top-right" />
     </main>
   );
 }
