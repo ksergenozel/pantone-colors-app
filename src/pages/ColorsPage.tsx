@@ -37,24 +37,25 @@ export default function PalettePage() {
   if (!data) return <Error message="No data available" />;
 
   return (
-    <main className="flex flex-col items-center gap-4.5 py-12 px-8 bg-zinc-50 min-h-screen w-full">
-      <Title color={data.data[0]?.hex} />
+    <>
+      <main className="flex flex-col items-center gap-4.5 py-12 px-8 bg-zinc-50 min-h-screen w-full">
+        <Title color={data.data[0]?.hex} />
 
-      <ColorSearchInput search={search} setSearch={handleSearchChange} />
+        <ColorSearchInput search={search} setSearch={handleSearchChange} />
 
-      <ColorList colors={data.data} />
+        <ColorList colors={data.data} />
 
-      <Pagination
-        page={data.page}
-        totalPages={data.totalPages}
-        hasNextPage={data.hasNextPage}
-        hasPrevPage={data.hasPrevPage}
-        nextPage={data.nextPage}
-        prevPage={data.prevPage}
-        onPageChange={handlePageChange}
-      />
-
+        <Pagination
+          page={data.page}
+          totalPages={data.totalPages}
+          hasNextPage={data.hasNextPage}
+          hasPrevPage={data.hasPrevPage}
+          nextPage={data.nextPage}
+          prevPage={data.prevPage}
+          onPageChange={handlePageChange}
+        />
+      </main>
       <Toaster theme="light" position="top-right" />
-    </main>
+    </>
   );
 }
