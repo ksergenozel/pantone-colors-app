@@ -7,7 +7,7 @@ export default function Title({ color }: { color?: string }) {
         className="w-8 h-8 mr-3"
       />
       <p
-        className="text-[1.6rem] text-zinc-950 font-extrabold inline font-stretch-105% relative mr-3.5"
+        className="text-[1.6rem] text-zinc-950 font-extrabold inline font-stretch-105% relative mr-3.5 selection:bg-zinc-200 selection:text-zinc-600"
         style={{ lineHeight: "1.75rem", color: color || "#09090b" }}
       >
         PANTONE
@@ -16,7 +16,7 @@ export default function Title({ color }: { color?: string }) {
         </span>
       </p>
       <p
-        className={`text-[1.6rem] font-bold inline opacity-75`}
+        className={`text-[1.6rem] font-bold inline opacity-75 selection:bg-zinc-200 selection:text-zinc-600`}
         style={{ lineHeight: "1.75rem", color: color || "#09090b" }}
       >
         Colors
